@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25116C63235B7BEB004D0846 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 25116C62235B7BEB004D0846 /* main.c */; };
+		25480BFF235B90C900B83C81 /* Die.c in Sources */ = {isa = PBXBuildFile; fileRef = 25480BFE235B90C900B83C81 /* Die.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		25116C5F235B7BEB004D0846 /* c_roll */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = c_roll; sourceTree = BUILT_PRODUCTS_DIR; };
 		25116C62235B7BEB004D0846 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		25480BFD235B90C900B83C81 /* Die.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Die.h; sourceTree = "<group>"; };
+		25480BFE235B90C900B83C81 /* Die.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Die.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				25116C62235B7BEB004D0846 /* main.c */,
+				25480BFD235B90C900B83C81 /* Die.h */,
+				25480BFE235B90C900B83C81 /* Die.c */,
 			);
 			path = c_roll;
 			sourceTree = "<group>";
@@ -88,7 +93,7 @@
 		25116C57235B7BEB004D0846 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Paul Malone";
 				TargetAttributes = {
 					25116C5E235B7BEB004D0846 = {
@@ -102,6 +107,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 25116C56235B7BEB004D0846;
 			productRefGroup = 25116C60235B7BEB004D0846 /* Products */;
@@ -118,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25480BFF235B90C900B83C81 /* Die.c in Sources */,
 				25116C63235B7BEB004D0846 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +246,7 @@
 		25116C67235B7BEB004D0846 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3Q6UYT2K5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -248,6 +256,7 @@
 		25116C68235B7BEB004D0846 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3Q6UYT2K5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
