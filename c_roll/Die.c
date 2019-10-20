@@ -27,7 +27,7 @@ int roll(Die die) {
 }
 
 // Parses a die struct from a given string
-void parseRoll(char *rollString) {
+Die parseRoll(char *rollString) {
 //    const char d[2] = "d";
 //    char *token;
 
@@ -46,7 +46,12 @@ void parseRoll(char *rollString) {
     
     printf("str = %s\n", rollString);
     const char d[2] = "d";
+    const char p[2] = "+";
+    const char m[2] = "-";
     char *token;
+    // Array to hold the values we parse to build the struct
+    int values[3] = {0, 0, 0};
+    int i = 0;
 
     /* get the first token */
     token = strtok(rollString, d);
@@ -54,16 +59,31 @@ void parseRoll(char *rollString) {
     /* walk through other tokens */
     while( token != NULL ) {
        printf( " %s\n", token );
+        // Convert token to int then store it in values
+        values[i] = (int)strtol(token, NULL, 10);
+        i++;
 
        token = strtok(NULL, d);
     }
+    
+    Die die;
+    die.amount = values[0];
+    die.sides = values[1];
+    die.modifier = values[2];
+    
+    return die;
 }
 
-// Private functions
-// TODO - implement a function to help me generate random numbers using arc4random
+/* Private functions */
 
 // Use arc4random_uniform to return random int within a limit
 static int getRandomInt(int upperLimit) {
     uint32_t u32upperLimit = (uint32_t) upperLimit;
     return (int) arc4random_uniform(u32upperLimit);
 }
+
+// Returns an array of the tokens parsed from a string given a delimiter
+int parseAmount(char *rollString) {
+    return 0;
+}
+

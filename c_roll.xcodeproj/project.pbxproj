@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25116C63235B7BEB004D0846 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 25116C62235B7BEB004D0846 /* main.c */; };
 		25480BFF235B90C900B83C81 /* Die.c in Sources */ = {isa = PBXBuildFile; fileRef = 25480BFE235B90C900B83C81 /* Die.c */; };
+		25480C02235CB6C500B83C81 /* NCArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 25480C01235CB6C500B83C81 /* NCArray.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		25116C62235B7BEB004D0846 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		25480BFD235B90C900B83C81 /* Die.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Die.h; sourceTree = "<group>"; };
 		25480BFE235B90C900B83C81 /* Die.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Die.c; sourceTree = "<group>"; };
+		25480C00235CB6C500B83C81 /* NCArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCArray.h; sourceTree = "<group>"; };
+		25480C01235CB6C500B83C81 /* NCArray.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = NCArray.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 			children = (
 				25116C62235B7BEB004D0846 /* main.c */,
 				25480BFD235B90C900B83C81 /* Die.h */,
+				25480C00235CB6C500B83C81 /* NCArray.h */,
+				25480C01235CB6C500B83C81 /* NCArray.c */,
 				25480BFE235B90C900B83C81 /* Die.c */,
 			);
 			path = c_roll;
@@ -126,6 +131,7 @@
 			files = (
 				25480BFF235B90C900B83C81 /* Die.c in Sources */,
 				25116C63235B7BEB004D0846 /* main.c in Sources */,
+				25480C02235CB6C500B83C81 /* NCArray.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,9 @@
 *****************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "Die.h"
+#include "NCArray.h"
 
 int main(int argc, const char * argv[]) {
     Die die = {4, 1, 1};
@@ -21,5 +23,35 @@ int main(int argc, const char * argv[]) {
 
     char rollstring[6] = "1d8";
     parseRoll(rollstring);
+    printf("size of int = %lu\n", sizeof(die));
+    
+    intArray array;
+    
+    init_intArray(&array, 1);
+    insert_intArray(&array, 2);
+    
+    for (int i = 0; i < array.size; i++) {
+        printf("%i\n", array.array[i]);
+    }
+    
+    insert_intArray(&array, 100);
+    
+    for (int i = 0; i < array.size; i++) {
+        printf("%i\n", array.array[i]);
+    }
+    
+    printf("array size %zu\n", array.size);
+    printf("array used %zu\n", array.used);
+    
+    insert_intArray(&array, 100);
+    
+    printf("array size %zu\n", array.size);
+    printf("array used %zu\n", array.used);
+    
+    free_intArray(&array);
+    
+    printf("array size %zu\n", array.size);
+    printf("array used %zu\n", array.used);
+    
     return 0;
 }
