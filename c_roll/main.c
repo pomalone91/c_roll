@@ -17,10 +17,9 @@
 int main(int argc, const char * argv[]) {
     Die die = {4, 1, 1};
     
-    int i = 20;
-    while (i > 0) {
-        printf("You rolled: %i\n", roll(die));
-        i -= 1;
-    }
+    printf("You rolled: %i\n", roll(die));
+
+    char rollstring[6] = "1d8";
+    parseRoll(rollstring);
     return 0;
 }

@@ -6,8 +6,7 @@
 //  Copyright © 2019 Paul Malone. All rights reserved.
 //
 
-// TODO - func prototypes for public functions
-// TODO - implement Die struct here
+// TODO - function to build a Die struct from a string like 1d8+1
 
 #ifndef Die_h
 #define Die_h
@@ -21,7 +20,7 @@ typedef struct Die {
     int modifier;
 } Die;
 
-// Public functions
+// Public interface
 int roll(Die die);
-
+void parseRoll(char *rollString);
 #endif /* Die_h */

@@ -10,6 +10,7 @@
 
 #include "Die.h"
 #include <stdlib.h>
+#include <string.h>
 
 // Generate random number given a dice
 static int getRandomInt(int upperLimit);
@@ -23,6 +24,39 @@ int roll(Die die) {
         i -= 1;
     }
     return rollValue + 1 + die.modifier;
+}
+
+// Parses a die struct from a given string
+void parseRoll(char *rollString) {
+//    const char d[2] = "d";
+//    char *token;
+
+//    printf("parsing rollString %s\n", rollString);
+//    token = strtok(rollString, d);
+//
+//    /* get the first token */
+//    token = strtok(rollString, d);
+//
+//    /* walk through other tokens */
+//    while( token != NULL ) {
+//       printf( " %s\n", token );
+//
+//       token = strtok(NULL, d);
+//    }
+    
+    printf("str = %s\n", rollString);
+    const char d[2] = "d";
+    char *token;
+
+    /* get the first token */
+    token = strtok(rollString, d);
+
+    /* walk through other tokens */
+    while( token != NULL ) {
+       printf( " %s\n", token );
+
+       token = strtok(NULL, d);
+    }
 }
 
 // Private functions
