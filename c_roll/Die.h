@@ -21,6 +21,7 @@ typedef struct Die {
 } Die;
 
 // Public interface
+Die init_die(char *rollString);
 int roll(Die die);
-Die parseRoll(char *rollString);
+
 #endif /* Die_h */

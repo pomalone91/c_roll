@@ -15,6 +15,29 @@
 // Generate random number given a dice
 static int getRandomInt(int upperLimit);
 
+// Parses a die struct from a given string
+Die init_die(char *rollString) {
+    Die die;
+    const char d[2] = "d";
+    const char plus[2] = "+";
+    char *token;
+
+    // Parse amount
+    token = strtok(rollString, d);
+    die.amount = (int)strtol(token, NULL, 10);
+    
+    // Parse sides
+    token = strtok(NULL, d);
+    token = strtok(token, plus);
+    die.sides = (int)strtol(token, NULL, 10);
+    
+    // Parse modifier
+    token = strtok(NULL, plus);
+    die.modifier = (int)strtol(token, NULL, 10);
+    
+    return die;
+}
+
 int roll(Die die) {
     int i = die.amount;
     int rollValue = 0;
@@ -24,54 +47,6 @@ int roll(Die die) {
         i -= 1;
     }
     return rollValue + 1 + die.modifier;
-}
-
-// Parses a die struct from a given string
-Die parseRoll(char *rollString) {
-//    const char d[2] = "d";
-//    char *token;
-
-//    printf("parsing rollString %s\n", rollString);
-//    token = strtok(rollString, d);
-//
-//    /* get the first token */
-//    token = strtok(rollString, d);
-//
-//    /* walk through other tokens */
-//    while( token != NULL ) {
-//       printf( " %s\n", token );
-//
-//       token = strtok(NULL, d);
-//    }
-    
-    printf("str = %s\n", rollString);
-    const char d[2] = "d";
-    const char p[2] = "+";
-    const char m[2] = "-";
-    char *token;
-    // Array to hold the values we parse to build the struct
-    int values[3] = {0, 0, 0};
-    int i = 0;
-
-    /* get the first token */
-    token = strtok(rollString, d);
-
-    /* walk through other tokens */
-    while( token != NULL ) {
-       printf( " %s\n", token );
-        // Convert token to int then store it in values
-        values[i] = (int)strtol(token, NULL, 10);
-        i++;
-
-       token = strtok(NULL, d);
-    }
-    
-    Die die;
-    die.amount = values[0];
-    die.sides = values[1];
-    die.modifier = values[2];
-    
-    return die;
 }
 
 /* Private functions */
