@@ -18,14 +18,14 @@
 
 int main(int argc, const char * argv[]) {
     Die d;
-    char rollstring[6] = "1d8+1";
+    char rollstring[9] = "1 d 8 + 1";
     d = init_die(rollstring);
     printf("You rolled: %i\n", roll(d));
-    int i = 10;
-    while (i > 0) {
-        printf("You rolled: %i\n", roll(d));
-        i--;
-    }
+//    int i = 10;
+//    while (i > 0) {
+//        printf("You rolled: %i\n", roll(d));
+//        i--;
+//    }
 
     
     
