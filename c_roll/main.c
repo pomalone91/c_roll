@@ -17,9 +17,12 @@
 #include "NCArray.h"
 
 int main(int argc, const char * argv[]) {
+    if (argc != 2) {
+        printf("No roll provided\n");
+        return EXIT_FAILURE;
+    }
     Die d;
-    char rollstring[9] = "1 d 8 + 1";
-    d = init_die(rollstring);
+    d = init_die((char *)argv[1]);
     printf("You rolled: %i\n", roll(d));
 //    int i = 10;
 //    while (i > 0) {

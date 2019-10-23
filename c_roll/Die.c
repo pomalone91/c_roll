@@ -23,9 +23,9 @@ void filwht(char *rollString);
 Die init_die(char *rollString) {
     Die die;
     
-    printf("before filling whitespace: %s\n", rollString);
+//    printf("before filling whitespace: %s\n", rollString);
     filwht(rollString);
-    printf("filled white space: %s\n", rollString);
+//    printf("filled white space: %s\n", rollString);
     
 //    const char d[2] = "d";
 //    const char plus[2] = "+";
@@ -91,6 +91,7 @@ void filwht(char *rollString) {
     int length = (int)strlen(rollString);
     for (int i = 0; i < length; ++i) {
         if (!isdigit(rollString[i])) {
+            // Uses pointer arithmetic to iterate through char string
             *(rollString + i) = ' ';
         }
     }

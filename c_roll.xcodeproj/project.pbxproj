@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25116C5F235B7BEB004D0846 /* c_roll */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = c_roll; sourceTree = BUILT_PRODUCTS_DIR; };
+		25116C5F235B7BEB004D0846 /* crol */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = crol; sourceTree = BUILT_PRODUCTS_DIR; };
 		25116C62235B7BEB004D0846 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		25480BFD235B90C900B83C81 /* Die.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Die.h; sourceTree = "<group>"; };
 		25480BFE235B90C900B83C81 /* Die.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Die.c; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		25116C60235B7BEB004D0846 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				25116C5F235B7BEB004D0846 /* c_roll */,
+				25116C5F235B7BEB004D0846 /* crol */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,7 +89,7 @@
 			);
 			name = c_roll;
 			productName = c_roll;
-			productReference = 25116C5F235B7BEB004D0846 /* c_roll */;
+			productReference = 25116C5F235B7BEB004D0846 /* crol */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3Q6UYT2K5;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = crol;
 			};
 			name = Debug;
 		};
@@ -265,7 +265,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3Q6UYT2K5;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = crol;
 			};
 			name = Release;
 		};
