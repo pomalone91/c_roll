@@ -22,47 +22,27 @@ void filwht(char *rollString);
 // Parses a die struct from a given string
 Die init_die(char *rollString) {
     Die die;
-    
-//    printf("before filling whitespace: %s\n", rollString);
     filwht(rollString);
-//    printf("filled white space: %s\n", rollString);
     
-//    const char d[2] = "d";
-//    const char plus[2] = "+";
-//    char *token;
     char *end;
     intArray a;
     init_intArray(&a, 0);
 //
     for (long i = strtol(rollString, &end, 10); rollString != end; i = strtol(rollString, &end, 10)) {
-//        printf("'%.*s' -> ", (int)(end-rollString), rollString);
         rollString = end;
         if (errno == ERANGE){
-            printf("range error, got ");
+            printf("range error: ");
             errno = 0;
         } else {
             insert_intArray(&a, (int)i);
         }
 //        printf("%ld\n", i);
     }
-
-//    // Parse amount
-//    token = strtok(rollString, d);
-//    die.amount = (int)strtol(token, NULL, 10);
-//
-//    // Parse sides
-//    token = strtok(NULL, d);
-//    token = strtok(token, plus);
-//    die.sides = (int)strtol(token, NULL, 10);
-//
-//    // Parse modifier
-//    token = strtok(NULL, plus);
-//    die.modifier = (int)strtol(token, NULL, 10);
     
     // Initialize die with values from  strtol array
-    die.amount = a.array[0];
-    die.sides = a.array[1];
-    die.modifier = a.array[2];
+    die.amount = (a.used >= 1) ? a.array[0] : 0;
+    die.sides = (a.used >= 2) ? a.array[1] : 0;
+    die.modifier = (a.used >= 3) ? a.array[2] : 0;
     
     return die;
 }
@@ -75,15 +55,18 @@ int roll(Die die) {
         rollValue += getRandomInt(die.sides);
         i -= 1;
     }
-    return rollValue + 1 + die.modifier;
+    return rollValue + die.modifier;
 }
 
 /* Private functions */
 
 // Use arc4random_uniform to return random int within a limit
 static int getRandomInt(int upperLimit) {
-    uint32_t u32upperLimit = (uint32_t) upperLimit;
-    return (int) arc4random_uniform(u32upperLimit);
+    if (upperLimit == 1) {
+        return 1;
+    }
+    // TODO set a lower limit?
+    return (int) arc4random_uniform((uint32_t)upperLimit) + 1;
 }
 
 // Fills in all non-digit characters with whitespace to make it easier for strtol to find digits
