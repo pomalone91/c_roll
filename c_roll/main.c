@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
     }
     Die d;
     d = init_die((char *)argv[1]);
-    printf("You rolled: %i\n", roll(d));
+    printf("%i\n", roll(d));
 //    int i = 10;
 //    while (i > 0) {
 //        printf("You rolled: %i\n", roll(d));
