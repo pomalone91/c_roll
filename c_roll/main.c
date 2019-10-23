@@ -17,14 +17,22 @@
 #include "NCArray.h"
 
 int main(int argc, const char * argv[]) {
-    if (argc != 2) {
+    if (argc < 2) {
         printf("No roll provided\n");
         return EXIT_FAILURE;
     }
     Die d;
-    d = init_die((char *)argv[1]);
+    int i = 1;
+    
+    while (i < argc) {
+        d = init_die((char *)argv[i]);
+        printf("%i ", roll(d));
+        ++i;
+    }
+    printf("\n");
+//    d = init_die((char *)argv[1]);
     // Uncomment below for debugging
 //    int i = 50; while (i > 0) { printf("%i\n", roll(d)); --i;}
-    printf("%i\n", roll(d));
+//    printf("%i\n", roll(d));
     return 0;
 }
