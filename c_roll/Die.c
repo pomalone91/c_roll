@@ -17,7 +17,7 @@
 
 // Prototypes for helpers
 static int getRandomInt(int upperLimit);
-void filwht(char *rollString);
+static void filwht(char *rollString);
 
 // Parses a die struct from a given string
 Die init_die(char *rollString) {
@@ -62,15 +62,15 @@ int roll(Die die) {
 
 // Use arc4random_uniform to return random int within a limit
 static int getRandomInt(int upperLimit) {
-    if (upperLimit == 1) {
-        return 1;
+    if (upperLimit == 0) {
+        return 0;
     }
     // TODO set a lower limit?
     return (int) arc4random_uniform((uint32_t)upperLimit) + 1;
 }
 
 // Fills in all non-digit characters with whitespace to make it easier for strtol to find digits
-void filwht(char *rollString) {
+static void filwht(char *rollString) {
     int length = (int)strlen(rollString);
     for (int i = 0; i < length; ++i) {
         if (!isdigit(rollString[i])) {

@@ -15,13 +15,28 @@
 #include <stdlib.h>
 #include "Die.h"
 #include "NCArray.h"
+#include <string.h>
 
 int main(int argc, const char * argv[]) {
-    if (argc < 2) {
-        printf("No roll provided\n");
-        return EXIT_FAILURE;
-    }
     Die d;
+    if (argc < 2) {
+        // TODO - change this so that it enters ineractive mode
+        char input[40];
+        const char exit[5] = "exit\n";
+        printf("Enter a roll: \n");
+        do {
+            if (fgets(input, 40, stdin)) {
+                if (strcmp(input, exit) != 0) {
+                    d = init_die(input);
+                    printf("%i\n", roll(d));
+                }
+            }
+//            printf("%i\n", strcmp(input, exit));
+        } while (strcmp(input, exit) != 0);
+        
+        return 0;
+    }
+    
     int i = 1;
     
     while (i < argc) {
