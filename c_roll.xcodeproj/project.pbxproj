@@ -13,6 +13,7 @@
 		257EB3852430710400BE9243 /* Interactive.c in Sources */ = {isa = PBXBuildFile; fileRef = 257EB3842430710400BE9243 /* Interactive.c */; };
 		257EB3882430711200BE9243 /* Bulk.c in Sources */ = {isa = PBXBuildFile; fileRef = 257EB3872430711200BE9243 /* Bulk.c */; };
 		257EB38B2430711D00BE9243 /* Batch.c in Sources */ = {isa = PBXBuildFile; fileRef = 257EB38A2430711D00BE9243 /* Batch.c */; };
+		257EB38E24312B8F00BE9243 /* Static.c in Sources */ = {isa = PBXBuildFile; fileRef = 257EB38D24312B8F00BE9243 /* Static.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		257EB3872430711200BE9243 /* Bulk.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Bulk.c; sourceTree = "<group>"; };
 		257EB3892430711D00BE9243 /* Batch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Batch.h; sourceTree = "<group>"; };
 		257EB38A2430711D00BE9243 /* Batch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Batch.c; sourceTree = "<group>"; };
+		257EB38C24312B8F00BE9243 /* Static.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Static.h; sourceTree = "<group>"; };
+		257EB38D24312B8F00BE9243 /* Static.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Static.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 			children = (
 				257EB3832430710400BE9243 /* Interactive.h */,
 				257EB3842430710400BE9243 /* Interactive.c */,
+				257EB38C24312B8F00BE9243 /* Static.h */,
+				257EB38D24312B8F00BE9243 /* Static.c */,
 				257EB3892430711D00BE9243 /* Batch.h */,
 				257EB38A2430711D00BE9243 /* Batch.c */,
 				257EB3862430711200BE9243 /* Bulk.h */,
@@ -164,6 +169,7 @@
 				257EB3882430711200BE9243 /* Bulk.c in Sources */,
 				257EB3852430710400BE9243 /* Interactive.c in Sources */,
 				25480BFF235B90C900B83C81 /* Die.c in Sources */,
+				257EB38E24312B8F00BE9243 /* Static.c in Sources */,
 				25116C63235B7BEB004D0846 /* main.c in Sources */,
 				25480C02235CB6C500B83C81 /* NCArray.c in Sources */,
 			);
