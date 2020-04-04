@@ -19,21 +19,19 @@
 #include "NCArray.h"
 #include "Interactive.h"
 #include "Static.h"
+#include "Batch.h"
+#include "Bulk.h"
 
 // Argument flags
-enum flag {bulk, batch, normal};
+//enum flag {bulk, batch, normal};
 
 int main(int argc, const char * argv[]) {
     
-    // Function prototypes
-    void staticmode(int argc, const char **arg);
-    int bulkMode(char *arg);
-    int batchMode(char *arg);
     
     // Local variables and stuff
     int c;
     char *arg = NULL;
-    const char **argvconst = argv;
+    int flagused = 0;
     
     /*
      TODO -
@@ -44,41 +42,33 @@ int main(int argc, const char * argv[]) {
         - crol -b ~/file    crol reads in a file of rolls and gives the result for each
      */
     
-    printf("argc: %i\n", argc);
     if (argc == 1) {
         interactive();
-    } else if (argc > 1 && getopt(argc, argvconst, "u:b:") == -1) {
-        staticmode(argc, argv);
     } else {
         // Switching on arg flags
-        while ((c = getopt(argc, argvconst, "u:b:")) != -1) {
+        while ((c = getopt(argc, argv, "u:b:")) != -1) {
             switch (c) {
                 case 'u':
-                    printf("bulk\n");
+                    bulk();
                     arg = optarg;
-                    
-                    printf("optarg: %s\n", arg);
+                    flagused = 1;
                     break;
                 case 'b':
-                    printf("batch\n");
                     arg = optarg;
-                    printf("optarg: %s\n", arg);
+                    batch(arg);
+                    flagused = 1;
                     break;
                 default:
-                    printf("normal");
+                    printf("Invalid argument option ");
                     arg = optarg;
                     printf("optarg: %s\n", arg);
                     break;
             }
         }
     }
-    return 0;
-}
-
-int bulkMode(char *arg) {
-    return 0;
-}
-
-int batchMode(char *arg) {
+    
+    if (argc > 1 && flagused == 0) {
+        staticmode(argc, argv);
+    } else
     return 0;
 }

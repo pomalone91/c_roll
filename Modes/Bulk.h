@@ -10,5 +10,9 @@
 #define Bulk_h
 
 #include <stdio.h>
+#include "Die.h"
+
+// Public interface
+void bulk(void);
 
 #endif /* Bulk_h */

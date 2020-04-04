@@ -7,3 +7,8 @@
 //
 
 #include "Bulk.h"
+
+void bulk(void) {
+    // TODO - implement warhammer bulk mode
+    printf("Warhammer bulk mode");
+}

@@ -10,5 +10,9 @@
 #define Batch_h
 
 #include <stdio.h>
+#include "Die.h"
+
+// Public interface
+void batch(char *path);
 
 #endif /* Batch_h */
