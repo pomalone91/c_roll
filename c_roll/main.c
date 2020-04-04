@@ -13,41 +13,62 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include "Die.h"
 #include "NCArray.h"
-#include <string.h>
+#include "Interactive.h"
+#include "Static.h"
+#include "Batch.h"
+#include "Bulk.h"
+
+// Argument flags
+//enum flag {bulk, batch, normal};
 
 int main(int argc, const char * argv[]) {
-    Die d;
-    if (argc < 2) {
-        // TODO - change this so that it enters ineractive mode
-        char input[40];
-        const char exit[5] = "exit\n";
-        printf("Enter a roll: \n");
-        do {
-            if (fgets(input, 40, stdin)) {
-                if (strcmp(input, exit) != 0) {
-                    d = init_die(input);
-                    printf("%i\n", roll(d));
-                }
+    
+    
+    // Local variables and stuff
+    int c;
+    char *arg = NULL;
+    int flagused = 0;
+    
+    /*
+     TODO -
+     Flag possibilities...
+        - crol              Interactive mode
+        - crol 1d4-1        Static mode
+        - crol -w 10w6u3    Warhammer-like roll. Roll 10 6-sided dice and return the count of rolls over 3
+        - crol -b ~/file    crol reads in a file of rolls and gives the result for each
+     */
+    
+    if (argc == 1) {
+        interactive();
+    } else {
+        // Switching on arg flags
+        while ((c = getopt(argc, argv, "u:b:")) != -1) {
+            switch (c) {
+                case 'u':
+                    bulk();
+                    arg = optarg;
+                    flagused = 1;
+                    break;
+                case 'b':
+                    arg = optarg;
+                    batch(arg);
+                    flagused = 1;
+                    break;
+                default:
+                    printf("Invalid argument option ");
+                    arg = optarg;
+                    printf("optarg: %s\n", arg);
+                    break;
             }
-//            printf("%i\n", strcmp(input, exit));
-        } while (strcmp(input, exit) != 0);
-        
-        return 0;
+        }
     }
     
-    int i = 1;
-    
-    while (i < argc) {
-        d = init_die((char *)argv[i]);
-        printf("%i ", roll(d));
-        ++i;
-    }
-    printf("\n");
-//    d = init_die((char *)argv[1]);
-    // Uncomment below for debugging
-//    int i = 50; while (i > 0) { printf("%i\n", roll(d)); --i;}
-//    printf("%i\n", roll(d));
+    if (argc > 1 && flagused == 0) {
+        staticmode(argc, argv);
+    } else
     return 0;
 }
