@@ -22,11 +22,20 @@ static void filwht(char *rollString);
 // Parses a die struct from a given string
 Die init_die(char *rollString) {
     Die die;
+    
+    char target = '-';
+    char *check_result = rollString;
+    // Check if the string has '-', if it does the modifier will need to be negative
+    check_result = strchr(check_result, target);
+    
     filwht(rollString);
     
     char *end;
+    
     intArray a;
     init_intArray(&a, 0);
+    
+    
 //
     for (long i = strtol(rollString, &end, 10); rollString != end; i = strtol(rollString, &end, 10)) {
         rollString = end;
@@ -42,7 +51,11 @@ Die init_die(char *rollString) {
     // Initialize die with values from  strtol array
     die.amount = (a.used >= 1) ? a.array[0] : 0;
     die.sides = (a.used >= 2) ? a.array[1] : 0;
-    die.modifier = (a.used >= 3) ? a.array[2] : 0;
+    if (check_result) {
+        die.modifier = (a.used >= 3) ? -a.array[2] : 0;
+    } else {
+        die.modifier = (a.used >= 3) ? a.array[2] : 0;
+    }
     
     return die;
 }
