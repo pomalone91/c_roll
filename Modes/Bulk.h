@@ -10,7 +10,7 @@
 #define Bulk_h
 
 #include <stdio.h>
-#include "Die.h"
+#include "../Structures/Die.h"
 
 // Public interface
 void bulk(void);

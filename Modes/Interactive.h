@@ -10,7 +10,7 @@
 #define Interactive_h
 
 #include <stdio.h>
-#include "Die.h"
+#include "../Structures/Die.h"
 
 // Public interface
 int interactive(void);

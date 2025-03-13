@@ -7,7 +7,7 @@
 //
 
 #include "Batch.h"
-#include "Die.h"
+#include "../Structures/Die.h"
 #include <string.h>
 
 void batch(char *path) {

@@ -10,9 +10,9 @@
 #define Static_h
 
 #include <stdio.h>
-#include "Die.h"
+#include "../Structures/Die.h"
 
 // Public interface
-void staticmode(int argc, const char **arg);
+void staticmode(int argc, char **arg);
 
 #endif /* Static_h */

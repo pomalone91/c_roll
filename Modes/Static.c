@@ -7,9 +7,9 @@
 //
 
 #include "Static.h"
-#include "Die.h"
+#include "../Structures/Die.h"
 
-void staticmode(int argc, const char **argv) {
+void staticmode(int argc, char **argv) {
     Die staticd;
     int i = 1;
     

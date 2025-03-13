@@ -15,17 +15,18 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "Die.h"
-#include "NCArray.h"
-#include "Interactive.h"
-#include "Static.h"
-#include "Batch.h"
-#include "Bulk.h"
+#include "../Structures/Die.h"
+#include "../Structures/NCArray.h"
+#include "../Modes/Interactive.h"
+#include "../Modes/Static.h"
+#include "../Modes/Batch.h"
+#include "../Modes/Bulk.h"
 
 // Argument flags
 //enum flag {bulk, batch, normal};
 
-int main(int argc, const char * argv[]) {
+int main(int argc, char *argv[]) {
+    //const char *argv[]) {
     
     
     // Local variables and stuff

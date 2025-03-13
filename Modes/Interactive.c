@@ -8,7 +8,7 @@
 
 #include <string.h>
 #include "Interactive.h"
-#include "Die.h"
+#include "../Structures/Die.h"
 
 // Starts interactive rolling mode
 int interactive(void) {
