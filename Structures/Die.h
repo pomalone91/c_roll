@@ -3,10 +3,6 @@
 //  c_roll
 //
 //  Created by Paul Malone on 10/19/19.
-//  Copyright © 2019 Paul Malone. All rights reserved.
-//
-
-// TODO - function to build a Die struct from a string like 1d8+1
 
 #ifndef Die_h
 #define Die_h

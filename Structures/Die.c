@@ -6,8 +6,6 @@
 //  Copyright © 2019 Paul Malone. All rights reserved.
 //
 
-// TODO - implement roll function here
-
 #include "Die.h"
 #include "NCArray.h"
 #include <stdlib.h>

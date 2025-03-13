@@ -3,8 +3,6 @@
 //  c_roll
 //
 //  Created by Paul Malone on 10/20/19.
-//  Copyright © 2019 Paul Malone. All rights reserved.
-//
 
 #include "NCArray.h"
 #include <stdlib.h>
