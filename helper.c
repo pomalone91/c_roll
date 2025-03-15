@@ -23,4 +23,3 @@ void filwht(char *rollString) {
         }
     }
 }
-

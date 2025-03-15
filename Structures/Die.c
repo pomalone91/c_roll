@@ -14,18 +14,14 @@
 #include <errno.h>
 #include <ctype.h>
 
-// Prototypes for helpers
-int getRandomInt(int upperLimit);
-void filwht(char *rollString);
-
 // Parses a die struct from a given string
 Die init_die(char *rollString) {
     Die die;
     
-    char target = '-';
-    char *check_result = rollString;
     // Check if the string has '-', if it does the modifier will need to be negative
-    check_result = strchr(check_result, target);
+    char *check_result = strchr(rollString, '-');
+    // printf("%s\n", check_result);
+    // printf("%s\n", rollString);
     
     filwht(rollString);
     
@@ -60,6 +56,9 @@ Die init_die(char *rollString) {
 }
 
 int roll(Die die) {
+    // printf("%i\n", die.amount);
+    // printf("%i\n", die.sides);
+    // printf("%i\n", die.modifier);
     int i = die.amount;
     int rollValue = 0;
 
@@ -69,23 +68,3 @@ int roll(Die die) {
     }
     return rollValue + die.modifier;
 }
-
-// // Use arc4random_uniform to return random int within a limit
-// static int getRandomInt(int upperLimit) {
-//     if (upperLimit == 0) {
-//         return 0;
-//     }
-//     // TODO set a lower limit?
-//     return (int) arc4random_uniform((uint32_t)upperLimit) + 1;
-// }
-
-// // Fills in all non-digit characters with whitespace to make it easier for strtol to find digits
-// static void filwht(char *rollString) {
-//     int length = (int)strlen(rollString);
-//     for (int i = 0; i < length; ++i) {
-//         if (!isdigit(rollString[i])) {
-//             // Uses pointer arithmetic to iterate through char string
-//             *(rollString + i) = ' ';
-//         }
-//     }
-// }

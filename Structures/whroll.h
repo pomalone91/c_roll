@@ -18,7 +18,7 @@ typedef struct whroll {
 } whroll;
 
 // Public interface
-whroll init_whroll(char *rollString);
-int make_whroll(whroll die);
+void init_whroll(char *rollString);
+void make_whroll(whroll die);
 
 #endif /* whroll_h */

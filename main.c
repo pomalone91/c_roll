@@ -16,6 +16,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "Structures/Die.h"
+#include "Structures/whroll.h"
 #include "Structures/NCArray.h"
 #include "Modes/Interactive.h"
 #include "Modes/Static.h"
