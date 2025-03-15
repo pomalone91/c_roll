@@ -8,11 +8,12 @@
 */
 
 #include "whroll.h"
+#include "../helper.h"
 #include <string.h>
 #include <stdlib.h>
 
 // Parse a warhammer roll from a string
-void init_whroll(char *roll_string) {
+whroll init_whroll(char *roll_string) {
     whroll roll;
 
     /*
@@ -101,11 +102,36 @@ void init_whroll(char *roll_string) {
         }
         roll.modifier = strtol(m, &end, 10);
         
+    } else {
+        roll.modifier = 0;
     }
-
   
     printf("%i\n", roll.amount);
     printf("%i\n", roll.sides);
     printf("%i\n", roll.target);
     printf("%i\n", roll.modifier);
+
+    return roll;
+};
+
+int make_whroll(whroll die){
+    int i = die.amount;
+    int hits = 0;
+    int roll_value = 0;
+
+    printf("%i to hit\n", die.target);
+
+    while (i > 0) {
+        int result = getRandomInt(die.sides) + die.modifier;
+        printf("Roll #%i: %i\n", i, result);
+        if (result >= die.target) {
+            hits++;
+        }
+        i -= 1;
+        
+    }
+
+    printf("Number of hits: %i\n", hits);
+
+    return hits;
 };

@@ -12,6 +12,8 @@
 void bulk(void) {
     // TODO - implement warhammer bulk mode
     printf("Warhammer bulk mode\n");
-    char *roll = "15d61h4-1";
-    init_whroll(roll);
+    char *roll = "100d6h4";
+    whroll r = init_whroll(roll);
+
+    make_whroll(r);
 }
