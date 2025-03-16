@@ -11,8 +11,9 @@
 
 #include <stdio.h>
 #include "../Structures/Die.h"
+#include "../Structures/whroll.h"
 
 // Public interface
-void bulk(void);
+void bulk(char *roll);
 
 #endif /* Bulk_h */
