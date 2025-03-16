@@ -129,12 +129,25 @@ int make_whroll(whroll die){
 
     printf("%i to hit\n", die.target);
 
+    char sign = (die.modifier >= 0 ? '+' : '-');
     while (i < die.amount) {
-        int result = getRandomInt(die.sides);
-        printf("Roll #%i: %i + %i = %i\n", i, result, die.modifier, result + die.modifier);
-        if (result + die.modifier >= die.target) {
-            hits++;
+        if (die.modifier < 0)
+        {
+            int result = getRandomInt(die.sides);
+            printf("Roll #%i: %i - %i = %i\n", i, result, (die.modifier * -1), result + die.modifier);
+            if (result + die.modifier >= die.target) {
+                hits++;
+            }
+        } else
+        {
+            int result = getRandomInt(die.sides);
+            printf("Roll #%i: %i + %i = %i\n", i, result, die.modifier, result + die.modifier);
+            if (result + die.modifier >= die.target) {
+                hits++;
+            }
         }
+        
+        
         i++;
         
     }
