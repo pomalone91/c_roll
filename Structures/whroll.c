@@ -47,18 +47,21 @@ whroll init_whroll(char *roll_string) {
     strncpy(amount, roll_string, i); // Copy the first i chars to amount string.
     roll.amount = strtol(amount, &end, 10); // Convert to long int and assign to struct
 
+    // printf("%i\n", roll.amount);
+    // printf("Got amount okay\n");
     // Get the number of sides
     // Going to copy everything after i (where we found 'd') to another string
     i++;    //Scoot i up the string past 'd'
     int j = 0;
 
     char sides_string[l-i];
-    while (roll_string[i] != '\n')
-    {
+    // printf("l = %i\n", l);
+    while (i < l) {
         sides_string[j] = roll_string[i];
         j++, i++;
+        // printf("i = %i, j = %i, %c\n", i, j, roll_string[i]);
     }
-
+    printf("Line 63\n");
     // Reset i for finding 'h'
     i = 0;
 
@@ -70,13 +73,14 @@ whroll init_whroll(char *roll_string) {
     strncpy(sides, sides_string, i);
     roll.sides = strtol(sides, &end, 10);
 
+    printf("Got sides okay\n");
     // Get the target to hit for the dice to be a success
     // puts(sides_string);
     i++;
     j = 0;
     l = strlen(sides_string);
     char hit[l-i];
-    while (i < l)
+    while ((sides_string[i] != '-' || sides_string[i] != '+') && i < l)
     {
         hit[j] = sides_string[i];
         j++, i++;
@@ -92,6 +96,7 @@ whroll init_whroll(char *roll_string) {
 
     roll.target = strtol(hit, &end, 10);
 
+    printf("Got target okay\n");
     // Modifier
     if (sides_string[i] == '-' || sides_string[i] == '+') {
         j = 0;
@@ -105,16 +110,19 @@ whroll init_whroll(char *roll_string) {
     } else {
         roll.modifier = 0;
     }
+    printf("Got modifier okay\n");
   
-    printf("%i\n", roll.amount);
-    printf("%i\n", roll.sides);
-    printf("%i\n", roll.target);
-    printf("%i\n", roll.modifier);
+    // printf("%i\n", roll.amount);
+    // printf("%i\n", roll.sides);
+    // printf("%i\n", roll.target);
+    // printf("%i\n", roll.modifier);
 
+    printf("Finished initializing\n");
     return roll;
 };
 
 int make_whroll(whroll die){
+    printf("Making roll\n");
     int i = die.amount;
     int hits = 0;
     int roll_value = 0;

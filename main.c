@@ -51,8 +51,9 @@ int main(int argc, char *argv[]) {
         while ((c = getopt(argc, argv, "u:b:")) != -1) {
             switch (c) {
                 case 'u':
-                    bulk();
                     arg = optarg;
+                    // printf("%s\n", arg);
+                    bulk(arg);
                     flagused = 1;
                     break;
                 case 'b':

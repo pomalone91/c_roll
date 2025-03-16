@@ -9,11 +9,9 @@
 #include "Bulk.h"
 #include "../Structures/whroll.h"
 
-void bulk(void) {
-    // TODO - implement warhammer bulk mode
-    printf("Warhammer bulk mode\n");
-    char *roll = "100d6h4";
-    whroll r = init_whroll(roll);
-
+void bulk(char *roll) {
+    // printf("%s\n", roll);
+    whroll r;
+    r = init_whroll(roll);
     make_whroll(r);
 }
