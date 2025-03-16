@@ -123,19 +123,19 @@ whroll init_whroll(char *roll_string) {
 
 int make_whroll(whroll die){
     printf("Making roll\n");
-    int i = die.amount;
+    int i = 0;
     int hits = 0;
     int roll_value = 0;
 
     printf("%i to hit\n", die.target);
 
-    while (i > 0) {
-        int result = getRandomInt(die.sides) + die.modifier;
-        printf("Roll #%i: %i\n", i, result);
-        if (result >= die.target) {
+    while (i < die.amount) {
+        int result = getRandomInt(die.sides);
+        printf("Roll #%i: %i + %i = %i\n", i, result, die.modifier, result + die.modifier);
+        if (result + die.modifier >= die.target) {
             hits++;
         }
-        i -= 1;
+        i++;
         
     }
 
