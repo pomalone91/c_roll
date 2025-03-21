@@ -32,7 +32,7 @@ whroll init_whroll(char *roll_string) {
     puts(roll_string);
     // Random stuff we'll use multiple times
     char mod;
-    int l = strlen(roll_string);
+    size_t l = strlen(roll_string);
     char *end;
 
     // Getting the amount of die

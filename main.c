@@ -22,6 +22,7 @@
 #include "Modes/Static.h"
 #include "Modes/Batch.h"
 #include "Modes/Bulk.h"
+#include "helper.h"
 
 // Argument flags
 //enum flag {bulk, batch, normal};
@@ -48,8 +49,12 @@ int main(int argc, char *argv[]) {
         interactive();
     } else {
         // Switching on arg flags
-        while ((c = getopt(argc, argv, "u:b:")) != -1) {
+        while ((c = getopt(argc, argv, "u:b:h")) != -1) {
             switch (c) {
+                case 'h':
+                    help(); // TODO - help function
+                    flagused = 1;
+                    break;
                 case 'u':
                     arg = optarg;
                     // printf("%s\n", arg);
