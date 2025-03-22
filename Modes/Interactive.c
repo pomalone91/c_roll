@@ -20,7 +20,7 @@ int interactive(void) {
         if (fgets(input, 40, stdin)) {
             if (strncmp(input, exit, 5) != 0) {
                 d = init_die(input);
-                printf("%i\n", roll(d));
+                // printf("%i\n", roll(d));
             } else {
                 break;
             }

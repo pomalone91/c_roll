@@ -34,7 +34,7 @@ void batch(char *path) {
             // Parse strings into dice
             printf("%s: ", s);
             Die d = init_die(s);
-            printf("%i\n ", roll(d));
+            // printf("%i\n ", roll(d));
         }
         printf("\n");
     }

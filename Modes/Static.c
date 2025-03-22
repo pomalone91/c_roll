@@ -8,15 +8,24 @@
 
 #include "Static.h"
 #include "../Structures/Die.h"
+#include "../Structures/roll.h"
 
 void staticmode(int argc, char **argv) {
-    Die staticd;
+    roll r;
     int i = 1;
-    
     while (i < argc) {
-        staticd = init_die((char *)argv[i]);
-        printf("%i ", roll(staticd));
+        r = init_roll((char *)argv[i]);
+        printf("%i ", make_roll(r));
         ++i;
     }
-    printf("\n");
+    
+    // Die staticd;
+    // int i = 1;
+    
+    // while (i < argc) {
+    //     staticd = init_die((char *)argv[i]);
+    //     printf("%i ", roll(staticd));
+    //     ++i;
+    // }
+    // printf("\n");
 }

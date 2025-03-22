@@ -18,6 +18,6 @@ typedef struct Die {
 
 // Public interface
 Die init_die(char *rollString);
-int roll(Die die);
+int roll_die(Die die);
 
 #endif /* Die_h */
