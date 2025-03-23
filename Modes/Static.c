@@ -16,6 +16,7 @@ void staticmode(int argc, char **argv) {
     while (i < argc) {
         r = init_roll((char *)argv[i]);
         printf("%i ", make_roll(r));
+        printf("\n");
         ++i;
     }
     

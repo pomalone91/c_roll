@@ -9,13 +9,18 @@
 
 #include <stdio.h>
 
+typedef enum {
+    D,
+    W,
+} r_type;
+
 // Roll structure
 typedef struct roll {
     int sides;
     int amount;
     int target; // The target value a roll is trying to beat to be considered a success
     int modifier; // If there is a +/- affecting the roll
-    char *type;
+    r_type type;
 } roll;
 
 // Public interface
