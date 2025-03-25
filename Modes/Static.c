@@ -7,7 +7,6 @@
 //
 
 #include "Static.h"
-#include "../Structures/Die.h"
 #include "../Structures/roll.h"
 
 void staticmode(int argc, char **argv) {

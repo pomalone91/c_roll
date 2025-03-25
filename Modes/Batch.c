@@ -7,7 +7,7 @@
 //
 
 #include "Batch.h"
-#include "../Structures/Die.h"
+#include "../Structures/roll.h"
 #include <string.h>
 
 void batch(char *path) {
@@ -33,7 +33,7 @@ void batch(char *path) {
             }
             // Parse strings into dice
             printf("%s: ", s);
-            Die d = init_die(s);
+            roll d = init_roll(s);
             // printf("%i\n ", roll(d));
         }
         printf("\n");

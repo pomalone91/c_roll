@@ -10,7 +10,7 @@
 #define Static_h
 
 #include <stdio.h>
-#include "../Structures/Die.h"
+#include "../Structures/roll.h"
 
 // Public interface
 void staticmode(int argc, char **arg);

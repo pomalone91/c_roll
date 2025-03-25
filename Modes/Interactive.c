@@ -8,18 +8,18 @@
 
 #include <string.h>
 #include "Interactive.h"
-#include "../Structures/Die.h"
+#include "../Structures/roll.h"
 
 // Starts interactive rolling mode
 int interactive(void) {
-    Die d;
+    roll d;
     char input[40];
     const char exit[5] = "exit\n";
     printf("Enter a roll: \n");
     do {
         if (fgets(input, 40, stdin)) {
             if (strncmp(input, exit, 5) != 0) {
-                d = init_die(input);
+                d = init_roll(input);
                 // printf("%i\n", roll(d));
             } else {
                 break;
