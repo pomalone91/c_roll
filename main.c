@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
                     flagused = 1;
                     break;
                 // case 'u':
-                    arg = optarg;
+                    // arg = optarg;
                     // printf("%s\n", arg);
                     // bulk(arg);
                     // flagused = 1;
@@ -76,5 +76,6 @@ int main(int argc, char *argv[]) {
     if (argc > 1 && flagused == 0) {
         staticmode(argc, argv);
     } else
+    
     return 0;
 }

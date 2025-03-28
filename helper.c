@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdint.h>
 
 // Use arc4random_uniform to return random int within a limit
 int getRandomInt(int upperLimit) {

@@ -9,12 +9,9 @@
 #include "Batch.h"
 #include "../Structures/roll.h"
 #include <string.h>
+#include <stdlib.h>
 
 void batch(char *path) {
-    // TODO - implement this bad boy
-    // Open file at path
-    // Parse rolls into dice?
-    // Make the rolls?
     FILE *inputFile;
     inputFile = fopen(path, "r");
     char buffer[64];
@@ -37,5 +34,12 @@ void batch(char *path) {
             // printf("%i\n ", roll(d));
         }
         printf("\n");
+    }
+    if (s != NULL)
+    {
+        free(s);
+    }
+    if (inputFile != NULL) {
+        free(inputFile);
     }
 }
