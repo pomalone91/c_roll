@@ -16,7 +16,6 @@
 #include <string.h>
 #include <unistd.h>
 #include "Structures/roll.h"
-#include "Structures/NCArray.h"
 #include "Modes/Interactive.h"
 #include "Modes/Static.h"
 #include "Modes/Batch.h"
