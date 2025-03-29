@@ -10,7 +10,7 @@
 #define Batch_h
 
 #include <stdio.h>
-#include "../Structures/Die.h"
+#include "../Structures/roll.h"
 
 // Public interface
 void batch(char *path);
