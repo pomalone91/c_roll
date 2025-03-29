@@ -31,7 +31,7 @@ void batch(char *path) {
             // Parse strings into dice
             printf("%s: ", s);
             roll d = init_roll(s);
-            // printf("%i\n ", roll(d));
+            printf("%i\n ", make_roll(d));
         }
         printf("\n");
     }

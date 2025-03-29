@@ -49,6 +49,7 @@ roll init_roll(const char *roll_string) {
             j++;
         } 
     }
+    roll_type[j++] = '\0';
     // Allocate some strings to parse different components of dice into.
     char amt_dice[10];
     char num_sides[10];

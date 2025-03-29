@@ -21,6 +21,7 @@
 #include "Modes/Static.h"
 #include "Modes/Batch.h"
 #include "helper.h"
+#include <bits/getopt_core.h>
 
 // Argument flags
 //enum flag {bulk, batch, normal};
