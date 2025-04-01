@@ -126,7 +126,7 @@ int roll_throw(Roll die) {
     {
     case D:
         while (i < die.amount) {
-            result += getRandomInt(die.sides);
+            result += get_randi(die.sides);
             i++;
         }
         result += die.modifier;
@@ -140,14 +140,14 @@ int roll_throw(Roll die) {
         while (i < die.amount) {
             if (die.modifier < 0)
             {
-                int r = getRandomInt(die.sides);
+                int r = get_randi(die.sides);
                 printf("Roll #%i: %i - %i = %i\n", i+1, r, (die.modifier * -1), r + die.modifier);
                 if (r + die.modifier >= die.target) {
                     result++;
                 }
             } else
             {
-                int r = getRandomInt(die.sides);
+                int r = get_randi(die.sides);
                 printf("Roll #%i: %i + %i = %i\n", i+1, r, die.modifier, r + die.modifier);
                 if (r + die.modifier >= die.target) {
                     result++;
