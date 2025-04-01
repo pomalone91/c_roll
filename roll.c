@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "../helper.h"
+#include "helper.h"
 
 roll init_roll(const char *roll_string) {
     roll r;

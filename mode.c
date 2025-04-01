@@ -1,16 +1,16 @@
 //
-//  Batch.c
+//  mode.c
 //  c_roll
 //
-//  Created by Paul Malone on 3/29/20.
-//  Copyright © 2020 Paul Malone. All rights reserved.
+//  Created by Paul Malone on 3/31/25.
 //
 
-#include "Batch.h"
-#include "../Structures/roll.h"
+#include "mode.h"
+#include "roll.h"
 #include <string.h>
 #include <stdlib.h>
 
+// Batch mode
 void batch(char *path) {
     FILE *inputFile;
     inputFile = fopen(path, "r");
@@ -42,4 +42,37 @@ void batch(char *path) {
     if (inputFile != NULL) {
         free(inputFile);
     }
+}
+
+// Static mode
+void staticmode(int argc, char **argv) {
+    roll r;
+    int i = 1;
+    while (i < argc) {
+        r = init_roll((char *)argv[i]);
+        printf("%i ", make_roll(r));
+        printf("\n");
+        ++i;
+    }
+}
+
+// Interactive Mode
+int interactive(void) {
+    roll d;
+    char input[40];
+    const char exit[5] = "exit\n";
+    printf("Enter a roll: \n");
+    do {
+        if (fgets(input, 40, stdin)) {
+            if (strncmp(input, exit, 5) != 0) {
+                d = init_roll(input);
+                printf("%i\n", make_roll(d));
+            } else {
+                break;
+            }
+        }
+//            printf("%i\n", strcmp(input, exit));
+    } while (strncmp(input, exit, 5) != 0);
+    
+    return 0;
 }

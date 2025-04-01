@@ -6,21 +6,14 @@
 //  Copyright © 2019 Paul Malone. All rights reserved.
 //
 
-/*****************************************
- TODOs
- TODO - Figure out how to architect this
-*****************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "Structures/roll.h"
-#include "Modes/Interactive.h"
-#include "Modes/Static.h"
-#include "Modes/Batch.h"
+#include "roll.h"
 #include "helper.h"
 #include <bits/getopt_core.h>
+#include "mode.h"
 
 // Argument flags
 //enum flag {bulk, batch, normal};
@@ -33,15 +26,6 @@ int main(int argc, char *argv[]) {
     int c;
     char *arg = NULL;
     int flagused = 0;
-    
-    /*
-     TODO -
-     Flag possibilities...
-        - crol              Interactive mode
-        - crol 1d4-1        Static mode
-        - crol -w 10w6u3    Warhammer-like roll. Roll 10 6-sided dice and return the count of rolls over 3
-        - crol -b ~/file    crol reads in a file of rolls and gives the result for each
-     */
     
     if (argc == 1) {
         interactive();
