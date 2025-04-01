@@ -6,7 +6,7 @@
 #include <stdint.h>
 
 // Use arc4random_uniform to return random int within a limit
-int getRandomInt(int upperLimit) {
+int get_randi(int upperLimit) {
     if (upperLimit == 0) {
         return 0;
     }
@@ -15,7 +15,7 @@ int getRandomInt(int upperLimit) {
 }
 
 // Fills in all non-digit characters with whitespace to make it easier for strtol to find digits
-void filwht(char *rollString) {
+void fill_white(char *rollString) {
     int length = (int)strlen(rollString);
     for (int i = 0; i < length; ++i) {
         if (!isdigit(rollString[i])) {

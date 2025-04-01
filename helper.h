@@ -10,8 +10,8 @@
 
 
 // Prototypes for helpers
-int getRandomInt(int upperLimit);
-void filwht(char *rollString);
+int get_randi(int upperLimit);
+void fill_white(char *rollString);
 
 
 #endif
