@@ -11,7 +11,6 @@
 #include <string.h>
 #include <unistd.h>
 #include "roll.h"
-#include "helper.h"
 #include <bits/getopt_core.h>
 #include "mode.h"
 
@@ -28,13 +27,13 @@ int main(int argc, char *argv[]) {
     int flagused = 0;
     
     if (argc == 1) {
-        interactive();
+        mode_interactive();
     } else {
         // Switching on arg flags
         while ((c = getopt(argc, argv, "b:h")) != -1) {
             switch (c) {
                 case 'h':
-                    help(); // TODO - help function
+                    mode_help(); // TODO - help function
                     flagused = 1;
                     break;
                 // case 'u':
@@ -45,7 +44,7 @@ int main(int argc, char *argv[]) {
                     // break;
                 case 'b':
                     arg = optarg;
-                    batch(arg);
+                    mode_batch(arg);
                     flagused = 1;
                     break;
                 default:
@@ -58,7 +57,7 @@ int main(int argc, char *argv[]) {
     }
     
     if (argc > 1 && flagused == 0) {
-        staticmode(argc, argv);
+        mode_static(argc, argv);
     } else
     
     return 0;

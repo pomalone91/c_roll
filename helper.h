@@ -12,6 +12,6 @@
 // Prototypes for helpers
 int getRandomInt(int upperLimit);
 void filwht(char *rollString);
-void help();
+
 
 #endif

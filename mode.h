@@ -13,8 +13,9 @@
 #include "roll.h"
 
 // Usage modes
-void batch(char *path);
-void staticmode(int argc, char **arg);
-int interactive(void);
+void mode_batch(char *path);
+void mode_static(int argc, char **arg);
+int mode_interactive(void);
+void mode_help();
 
 #endif /* mode_h */

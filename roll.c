@@ -5,8 +5,8 @@
 #include <ctype.h>
 #include "helper.h"
 
-roll init_roll(const char *roll_string) {
-    roll r;
+Roll roll_init(const char *roll_string) {
+    Roll r;
     char *end;
     size_t len = strlen(roll_string);
     // printf("%zu\n", len);
@@ -119,7 +119,7 @@ roll init_roll(const char *roll_string) {
     return r;
 }
 
-int make_roll(roll die) {
+int roll_throw(Roll die) {
     int result = 0;
     int i = 0;
     switch (die.type)

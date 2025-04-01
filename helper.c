@@ -24,8 +24,3 @@ void filwht(char *rollString) {
         }
     }
 }
-
-void help() {
-    printf("Options\n-h: Show this help message.\n-b: Roll all the rolls in a plaintext file. Example: roll -b \"/path/to/file.txt\"\n\nFormat examples\n1d6: Rolls 1 six-sided dice.\n1d6+1: Rolls 1 six-sided dice and adds 1 to the result.\n10d6h4+1: Rolls 10 six-sided die hitting on 4 and adds 1 to the result of each individual dice to determine if they hit. The result is the number of dice that were equal to or higher than 4.\n");
-
-}

@@ -12,19 +12,19 @@
 typedef enum {
     D,
     W,
-} r_type;
+} RollType;
 
 // Roll structure
-typedef struct roll {
+typedef struct Roll {
     int sides;
     int amount;
     int target; // The target value a roll is trying to beat to be considered a success
     int modifier; // If there is a +/- affecting the roll
-    r_type type;
-} roll;
+    RollType type;
+} Roll;
 
 // Public interface
-roll init_roll(const char *roll_string);
-int make_roll(roll die);
+Roll roll_init(const char *roll_string);
+int roll_throw(Roll die);
 
 #endif /* roll_h */
