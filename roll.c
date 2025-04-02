@@ -59,7 +59,7 @@ Roll roll_init(const char *roll_string) {
     // Switch roll type and call appropriate functions to handle roll
     if (strcmp(roll_type, "d") == 0)
     {
-        r.amount = strtol(strncpy(amt_dice, roll_string, d_position), &end, 10);
+        r.amount = strtol(strncpy(amt_dice, roll_string, sizeof d_position), &end, 10);
         r.sides = strtol(strncpy(num_sides, roll_string+(d_position+1), (len - (d_position))), &end, 10);
         r.type = D;
         
@@ -71,7 +71,7 @@ Roll roll_init(const char *roll_string) {
     } else if (strcmp(roll_type, "d+") == 0 || strcmp(roll_type, "d-") == 0)
     {
         r.type = D;
-        r.amount = strtol(strncpy(amt_dice, roll_string, d_position), &end, 10);
+        r.amount = strtol(strncpy(amt_dice, roll_string, sizeof d_position), &end, 10);
         r.sides = strtol(strncpy(num_sides, roll_string+(d_position+1), (mod_position - d_position)), &end, 10);
         r.modifier = strtol(strncpy(mod, roll_string+(mod_position+1), (len - mod_position)), &end, 10);
         if (strcmp(roll_type, "d-") == 0)
@@ -87,7 +87,7 @@ Roll roll_init(const char *roll_string) {
     } else if (strcmp(roll_type, "dh") == 0)
     {
         r.type = W;
-        r.amount = strtol(strncpy(amt_dice, roll_string, d_position), &end, 10);
+        r.amount = strtol(strncpy(amt_dice, roll_string, sizeof d_position), &end, 10);
         r.sides = strtol(strncpy(num_sides, roll_string+(d_position+1), (h_position - d_position)), &end, 10);
         r.target = strtol(strncpy(mod, roll_string+(h_position+1), (len - h_position)), &end, 10);
         r.modifier = 0;
@@ -98,7 +98,7 @@ Roll roll_init(const char *roll_string) {
     } else if (strcmp(roll_type, "dh+") == 0 || strcmp(roll_type, "dh-") == 0)
     {
         r.type = W;
-        r.amount = strtol(strncpy(amt_dice, roll_string, d_position), &end, 10);
+        r.amount = strtol(strncpy(amt_dice, roll_string, sizeof d_position), &end, 10);
         r.sides = strtol(strncpy(num_sides, roll_string+(d_position+1), (h_position - d_position)), &end, 10);
         r.target = strtol(strncpy(mod, roll_string+(h_position+1), (mod_position - h_position)), &end, 10);
         r.modifier = strtol(strncpy(hit_tgt, roll_string+(mod_position+1), (len - mod_position)), &end, 10);
@@ -116,10 +116,17 @@ Roll roll_init(const char *roll_string) {
         printf("Invalid roll string.\n");
     }
 
+    // if (roll_type != NULL)
+    // {
+    //     free(roll_type);
+    // }
+    
+
     return r;
 }
 
 int roll_throw(Roll die) {
+    printf("Roll attributes %i, %i, %i, %i\n", die.amount, die.sides, die.target, die.modifier);
     int result = 0;
     int i = 0;
     switch (die.type)
