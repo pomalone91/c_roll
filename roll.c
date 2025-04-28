@@ -126,7 +126,7 @@ Roll roll_init(const char *roll_string) {
 }
 
 int roll_throw(Roll die) {
-    printf("Roll attributes %i, %i, %i, %i\n", die.amount, die.sides, die.target, die.modifier);
+    //printf("Roll attributes %i, %i, %i, %i\n", die.amount, die.sides, die.target, die.modifier);
     int result = 0;
     int i = 0;
     switch (die.type)
